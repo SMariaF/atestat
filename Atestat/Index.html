@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacalaureat la Fizica</title>
+    <style>
+        /* Stiluri pentru pagina principală */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+        }
+
+        /* Coloană stângă cu cuprins */
+        .left-column {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .left-column a {
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .left-column a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Coloană dreaptă pentru conținutul principal */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .section {
+            display: none;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #333;
+        }
+
+        .section p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* Stil pentru pagina de început */
+        .intro {
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="left-column">
+        <h3>Cuprins</h3>
+        <a href="#" onclick="showSection('resurse')">Resurse pentru Bacalaureat</a>
+        <a href="#" onclick="showSection('exercitii')">Exerciții și Probleme</a>
+        <a href="#" onclick="showSection('teorie')">Teorie și Formule</a>
+        <a href="#" onclick="showSection('sfaturi')">Sfaturi de Pregătire</a>
+    </div>
+
+    
+    <div class="main-content">
+        
+        <div class="intro" id="intro">
+            <h1>Bacalaureat la Fizica</h1>
+            <p>Acesta este site-ul dedicat pregătirii pentru Bacalaureatul la Fizică. Poți explora resurse utile, exerciții și multe altele pentru a te pregăti eficient.</p>
+        </div>
+
+        
+        <div class="section" id="resurse">
+            <h2>Resurse pentru Bacalaureat</h2>
+            <p>Aici vei găsi o selecție de cărți, site-uri și aplicații utile pentru pregătirea examenului de Bacalaureat la Fizică.</p>
+        </div>
+
+        <div class="section" id="exercitii">
+            <h2>Exerciții și Probleme</h2>
+            <p>În această secțiune, vei găsi exerciții și probleme din trecut, care te vor ajuta să îți testezi cunoștințele și să te obișnuiești cu formatul examenului.</p>
+        </div>
+
+        <div class="section" id="teorie">
+            <h2>Teorie și Formule</h2>
+            <p>Recapitulează noțiunile de bază din fizică, formulele esențiale și conceptele cheie care sunt importante pentru examenul de Bacalaureat.</p>
+        </div>
+
+        <div class="section" id="sfaturi">
+            <h2>Sfaturi de Pregătire</h2>
+            <p>Învață tehnici eficiente de studiu, strategii pentru gestionarea timpului și sfaturi pentru ziua examenului pentru a te asigura că ești pregătit complet.</p>
+        </div>
+    </div>
+
+    <script>
+   
+        function showSection(sectionId) {
+           
+            document.getElementById('intro').style.display = 'none';
+
+          
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+          
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+
+        
+        function showIntro() {
+            document.getElementById('intro').style.display = 'block';
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+        }
+
+        
+        showIntro();
+    </script>
+
+</body>
+</html>
